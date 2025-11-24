@@ -4,6 +4,7 @@ extends CanvasLayer
 
 @onready var timer_label:Label = %timer_label
 @onready var death_label:Label = %death_label
+@onready var gold_label:Label = %gold_label
 @onready var fire_bar: TextureProgressBar = %FireBar
 @onready var super_timer: Timer = $Super_attack_timer
 @onready var can_time = true
@@ -11,6 +12,7 @@ extends CanvasLayer
 func _process(delta: float):
 	timer_label.text = GameManager.time_elapsed_string
 	death_label.text = str(GameManager.death_count)
+	gold_label.text = str(GameManager.gold_count)
 	fire_bar.set_value(15 - super_timer.get_time_left())
 	try_to_time()
 	
@@ -23,6 +25,9 @@ func try_to_time():
 	
 func increase_death()->void:
 	GameManager.death_count += 1
+
+func increase_gold() -> void:
+	GameManager.gold_count += 1
 
 func time_passing()->void:
 	fire_bar.value = GameManager.time_elapsed

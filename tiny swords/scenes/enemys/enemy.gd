@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @export var health: int = 10
 @export var death_prefab: PackedScene
+@export var gold_prefab = preload("res://scenes/misc/gold.tscn")
 var damage_digit_prefab:PackedScene
 
 @onready var gameui:GameUI
@@ -38,6 +39,10 @@ func die()->void:
 		var death_object = death_prefab.instantiate()
 		death_object.position = position	
 		get_parent().add_child(death_object)
+	if gold_prefab:
+		var gold_object = gold_prefab.instantiate()
+		gold_object.position = position
+		get_parent().add_child(gold_object)
 	var world = self.get_parent()
 	var gameui:GameUI = world.get_node("gameui")
 	if gameui.has_method("increase_death"):

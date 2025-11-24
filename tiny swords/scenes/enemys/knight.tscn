@@ -1,9 +1,9 @@
 [gd_scene load_steps=14 format=3 uid="uid://dyo3e7r1g1fhs"]
 
-[ext_resource type="Script" path="res://scenes/enemys/enemy.gd" id="1_ooiaq"]
+[ext_resource type="Script" uid="uid://dxj05ybr6pgk8" path="res://scenes/enemys/enemy.gd" id="1_ooiaq"]
 [ext_resource type="PackedScene" uid="uid://dhouobuyf6k3e" path="res://scenes/misc/skull_knight.tscn" id="2_tdius"]
 [ext_resource type="Texture2D" uid="uid://dhb038dkp1pbn" path="res://Assets/Factions/Knights/Troops/Warrior/Red/Warrior_Red.png" id="3_s4io1"]
-[ext_resource type="Script" path="res://scenes/enemys/behaviors/follow_player.gd" id="5_81qyd"]
+[ext_resource type="Script" uid="uid://cmdaxvm80gvqb" path="res://scenes/enemys/behaviors/follow_player.gd" id="5_81qyd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lc5ka"]
 atlas = ExtResource("3_s4io1")

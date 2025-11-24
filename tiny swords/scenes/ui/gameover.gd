@@ -3,6 +3,7 @@ class_name GameOver
 extends CanvasLayer
 @onready var time_label: Label = %Time_Label
 @onready var monsters_label: Label = %Monsters_Label
+@onready var gold_label: Label = %gold_label
 
 @export var restart_delay: float = 5.0
 var restart_cooldown: float
@@ -12,6 +13,8 @@ var monsters_defeated: int
 func _ready():
 	time_label.text = GameManager.time_elapsed_string
 	monsters_label.text = str(GameManager.death_count)
+	gold_label.text = str(GameManager.gold_count)
+	
 	restart_cooldown = restart_delay
 
 func _process(delta):

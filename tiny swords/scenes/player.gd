@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var speed: float = 3
 @export var sword_damage: int = 2
 @export var health: int = 100
+@export var money: int = 0
 @export var max_health: int = 100
 @export var death_prefab: PackedScene
 @export_category("Ritual")
@@ -135,6 +136,10 @@ func die() -> void:
 func heal(amount: int) -> int:
 	health = min(max_health, health + amount)
 	return health
+	
+func collect(amount: int) -> int:
+	GameManager.gold_count += amount
+	return amount
 
 # ===============================
 #   SUPER ATAQUE
